@@ -14,9 +14,10 @@ def registerPage(request):
     #print(request.method)
     form=MyUserCreationForm(request.POST)
     print(form)
-    print(request.method)
-    user=form.save(commit=False)
-    user.save()
+    if form.is_valid():
+       print(request.method)
+       user=form.save(commit=False)
+       user.save()
     return Response(status=200)
 
 def login(request):

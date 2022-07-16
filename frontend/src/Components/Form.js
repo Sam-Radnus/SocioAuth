@@ -6,7 +6,7 @@ const Form = () => {
     const register=async()=>{
         console.log(email);
         console.log(password);
-        const response=await fetch('/register',{
+        const response=await fetch('http://127.0.0.1:8000/register',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
