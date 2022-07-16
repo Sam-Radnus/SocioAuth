@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns=[
-    path('register',views.registerPage,name="registerPage")
+    path('register',views.RegisterUserAPIView.as_view(),name="registerPage")
 ]
