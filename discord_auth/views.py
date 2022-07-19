@@ -29,7 +29,21 @@ auth_url_discord="https://discord.com/api/oauth2/authorize?client_id=99533096484
 #     pass
 
 #Class based view to register user
-class RegisterUserAPIView(generics.CreateAPIView):
+
+class RegisterUserAPIView(generics.CreateAPIView):   
+    
     queryset=User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
+
+
+@api_view(['GET'])
+def getRoutes(request):
+    print('data2')
+    routes = [
+        '/api/token/',
+        '/api/register/',
+        '/api/token/refresh/',
+        '/api/prediction/'
+    ]
+    return Response(routes)
