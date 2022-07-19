@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns=[
-    path('register',views.RegisterUserAPIView.as_view(),name="registerPage")
+    path('register/',views.RegisterUserAPIView.as_view(),name="registerPage"),
+    path('', views.getRoutes)
 ]
