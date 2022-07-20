@@ -5,27 +5,27 @@ const Form = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
-    const [first, setFirst] = useState("");
-    const [second, setSecond] = useState("");
+    const [first_name, setFirst] = useState("");
+    const [last_name, setSecond] = useState("");
     const register = async () => {
         console.log(username);
         console.log(email);
         console.log(password);
         console.log(password2);
-        console.log(first);
-        console.log(second);
+        console.log(first_name);
+        console.log(last_name);          
         const response = await fetch('http://127.0.0.1:8000/api/register/', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                username:username,
-                email:email,
-                password:password,
-                password2:password2,
-                first:first,
-                second:second
+                username,
+                email, 
+                password,
+                password2,
+                first_name,
+                last_name
             })
 
         });
