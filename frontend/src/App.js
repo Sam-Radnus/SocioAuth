@@ -5,25 +5,30 @@ import './App.css';
 import Welcome from "./Components/Welcome";
 
 import Form from "./Components/Form";
-import { useNavigate } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Dashboard from "./Components/Dashboard";
+import Login from "./Components/Login";
 function App() {
 
   return (
     <div  className="App">
      
       <Router>
-      <div style={{position:'absolute',backgroundColor:'white',border:'none',top:'40%',left:'50%',transform:'translate(-50%,-50%)',width:'40vw',padding:'10px',height:'fit-content'}}>
-        <Form/>
-        </div>
+        <Navbar/>
+    
+      
         <Routes>
-        <Route path="/auth" exact element={<Welcome/>}/>
+        <Route path="/" exact element={<Welcome/>}/>
+        <Route path="/login/" exact element={<Login/>}/>
+        <Route path="/register/" exact element={<Form/>}/>
+        <Route path="/auth" exact element={<Dashboard/>}/>
         
       </Routes>
       
       
       </Router>
-      
-    </div>
+       
+      </div>
   );
 }
 

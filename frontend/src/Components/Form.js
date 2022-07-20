@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 const Form = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
+    const navigate=useNavigate();
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [first_name, setFirst] = useState("");
+    
     const [last_name, setSecond] = useState("");
     const register = async () => {
         console.log(username);
@@ -14,7 +17,7 @@ const Form = () => {
         console.log(password2);
         console.log(first_name);
         console.log(last_name);          
-        const response = await fetch('http://127.0.0.1:8000/api/register/', {
+        const response=await fetch('http://127.0.0.1:8000/api/register/', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,9 +31,12 @@ const Form = () => {
                 last_name
             })
 
-        });
-
+        })
         console.log(response);
+        if(response.status===201)
+           navigate("/auth");
+
+        
     }
     return (
         <div>
