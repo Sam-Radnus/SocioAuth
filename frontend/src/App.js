@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import Welcome from "./Components/Welcome";
-
+import { AuthProvider } from "./Context/AuthContext";
 import Form from "./Components/Form";
 import Navbar from "./Components/Navbar";
 import Dashboard from "./Components/Dashboard";
@@ -14,6 +14,7 @@ function App() {
     <div  className="App">
      
       <Router>
+      
         <Navbar/>
     
       
@@ -25,7 +26,7 @@ function App() {
         
       </Routes>
       
-      
+     
       </Router>
        
       </div>
