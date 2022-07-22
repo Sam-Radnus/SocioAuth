@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../Context/AuthContext';
 const Navbar = () => {
     const navigate=useNavigate();
+  
+    const {logoutUser}=useContext(AuthContext);
   return (
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -34,6 +37,7 @@ const Navbar = () => {
         </ul>
         <form class="d-flex" role="search">
           <button style={{marginRight:'10px'}}onClick={()=>navigate('/login/')}className="btn btn-danger">Login</button>
+          <button style={{marginRight:'10px'}} onClick={()=>{ logoutUser() }}className="btn btn-primary">Logout</button>
           <button onClick={()=>navigate('/register/')}className="btn btn-success">Sign-Up</button>
         </form>
       </div>
