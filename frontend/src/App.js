@@ -18,7 +18,7 @@ function App() {
     <div  className="App">
     
   
-    
+     
         <Navbar/>
     
       
@@ -30,7 +30,7 @@ function App() {
         
       </Routes>
       
-     
+      
    
     
       </div>

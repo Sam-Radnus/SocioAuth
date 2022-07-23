@@ -5,7 +5,8 @@ const Login = () => {
   let [username,setUsername]=useState([]);
   let [password,setPassword]=useState([]);
   return (
-    <form>
+    <div style={{position:'absolute',top:'25%',left:'25%',backgroundColor:'white',borderRadius:'10px',padding:'20px',width:'50vw'}}>
+    <form >
   <div class="mb-3">
     <label for="exampleInputEmail1" className="form-label">Username</label>
     <input type="username" onChange={(e)=>{
@@ -23,13 +24,17 @@ const Login = () => {
     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
+  <div>
+  <button style={{backgroundColor:'#6E85D2',border:'none',borderRadius:'5px',color:'white'}}><i className="fa-brands fa-discord mx-2"></i>Login With Discord</button>
+  </div>
   <button type="submit" onClick={(e)=>{
     e.preventDefault();
     console.log(username);
     console.log(password);
     loginUser(username,password);
-  }} class="btn btn-primary">Submit</button>
+  }} class="btn btn-secondary my-2">Submit</button>
 </form>
+</div>
   )
 }
 
