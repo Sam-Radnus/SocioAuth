@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
@@ -12,6 +12,7 @@ import Login from "./Components/Login";
 
 function App() {
   const navigate=useNavigate();
+ 
   return (
    
       
@@ -26,7 +27,7 @@ function App() {
         <Route exact path="/"  element={<Welcome/>}/>
         <Route exact path="/login/"  element={<Login/>}/>
         <Route exact path="/register/"  element={<Form/>}/>
-        <Route exact path="/auth"  element={<Dashboard/>}/>
+        <Route exact path={`/auth`}  element={<Dashboard/>}/>
         
       </Routes>
       

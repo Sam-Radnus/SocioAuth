@@ -1,9 +1,11 @@
 import React, { useContext , useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import AuthContext from '../Context/AuthContext'
 const Login = () => {
-  let {loginUser}=useContext(AuthContext);
+  let {authTokens,loginUser}=useContext(AuthContext);
   let [username,setUsername]=useState([]);
   let [password,setPassword]=useState([]);
+  const navigate=useNavigate();
   return (
     <div style={{position:'absolute',top:'25%',left:'25%',backgroundColor:'white',borderRadius:'10px',padding:'20px',width:'50vw'}}>
     <form >
@@ -25,7 +27,7 @@ const Login = () => {
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <div>
-  <button style={{backgroundColor:'#6E85D2',border:'none',borderRadius:'5px',color:'white'}}><i className="fa-brands fa-discord mx-2"></i>Login With Discord</button>
+  <a href="https://discord.com/api/oauth2/authorize?client_id=995330964840525914&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&response_type=code&scope=identify%20email"  rel="noreferrer" style={{backgroundColor:'#6E85D2',border:'none',borderRadius:'5px',color:'white'}}><i className="fa-brands fa-discord mx-2"></i>Login With Discord</a>
   </div>
   <button type="submit" onClick={(e)=>{
     e.preventDefault();
