@@ -1,1 +1,1 @@
-web: gunicorn authme.authme.wsgi --log-file -
+web: gunicorn authme.wsgi --log-file -
