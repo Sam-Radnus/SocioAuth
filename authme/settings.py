@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-jo!m)dxb@w)d8_9psiw3of(o)5+2)hgceeg$$fio8k#q%2*56z
 DEBUG = True
 
 ALLOWED_HOSTS = ['socioauth-login.herokuapp.com/','127.0.0.1']
-DEBUG=False
+
 
 # Application definition
 
@@ -48,9 +48,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleWare',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-         "corsheaders.middleware.CorsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
        
@@ -165,11 +165,15 @@ CORS_ALLOWED_ORIGINS = [
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
