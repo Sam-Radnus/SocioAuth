@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jo!m)dxb@w)d8_9psiw3of(o)5+2)hgceeg$$fio8k#q%2*56z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['socioauth-login.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['socioauth-login.herokuapp.com','127.0.0.1']
 
 
 # Application definition
