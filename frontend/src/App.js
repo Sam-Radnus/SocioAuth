@@ -9,7 +9,7 @@ import Form from "./Components/Form";
 import Navbar from "./Components/Navbar";
 import Dashboard from "./Components/Dashboard";
 import Login from "./Components/Login";
-
+import PrivateRoute from "./Utils/PrivateRoute";
 function App() {
   const navigate=useNavigate();
  
@@ -27,8 +27,9 @@ function App() {
         <Route exact path="/"  element={<Welcome/>}/>
         <Route exact path="/login/"  element={<Login/>}/>
         <Route exact path="/register/"  element={<Form/>}/>
-        <Route exact path={`/auth`}  element={<Dashboard/>}/>
-        
+        <Route element={<PrivateRoute/>}>
+           <Route exact path={`/auth`}  element={<Dashboard/>}/>
+        </Route>
       </Routes>
       
       

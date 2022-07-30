@@ -6,6 +6,15 @@ const Login = () => {
   let [username,setUsername]=useState([]);
   let [password,setPassword]=useState([]);
   const navigate=useNavigate();
+  const discordLogin=async(e)=>{
+        e.preventDefault();
+        console.log("hI");
+        let data=await fetch('http://127.0.0.1:8000/api/discord/');
+        let parsedData=await data.json();
+        console.log(parsedData.url);
+        window.location.href=parsedData.url;
+
+  }
   return (
     <div style={{position:'absolute',top:'25%',left:'25%',backgroundColor:'white',borderRadius:'10px',padding:'20px',width:'50vw'}}>
     <form >
@@ -27,7 +36,7 @@ const Login = () => {
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <div>
-  <a href="https://discord.com/api/oauth2/authorize?client_id=995330964840525914&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&response_type=code&scope=identify%20email"  rel="noreferrer" style={{backgroundColor:'#6E85D2',border:'none',borderRadius:'5px',color:'white'}}><i className="fa-brands fa-discord mx-2"></i>Login With Discord</a>
+  <button onClick={discordLogin}  style={{backgroundColor:'#6E85D2',border:'none',borderRadius:'5px',color:'white'}}><i className="fa-brands fa-discord mx-2"></i>Login With Discord</button>
   </div>
   <button type="submit" onClick={(e)=>{
     e.preventDefault();

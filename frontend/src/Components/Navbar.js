@@ -36,9 +36,9 @@ const Navbar = () => {
           </li>
         </ul>
         <form class="d-flex" role="search">
-          {authTokens===null?<button style={{marginRight:'10px'}}onClick={()=>navigate('/login/')}className="btn btn-danger">Login</button>:<button style={{marginRight:'10px'}} onClick={()=>{ logoutUser() }}className="btn btn-primary">Logout</button>}
+          {authTokens===null?<><button style={{marginRight:'10px'}}onClick={()=>navigate('/login/')}className="btn btn-danger">Login</button> <button onClick={()=>navigate('/register/')}className="btn btn-success">Sign-Up</button></>:<button style={{marginRight:'10px'}} onClick={()=>{ logoutUser() }}className="btn btn-primary">Logout</button>}
           
-          <button onClick={()=>navigate('/register/')}className="btn btn-success">Sign-Up</button>
+         
         </form>
       </div>
     </div>
